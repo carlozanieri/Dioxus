@@ -1,0 +1,19 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.8.8"
+tokio = { workspace = true }
+
+sqlx = {version = "0.8.6", features = ["sqlite","runtime-tokio","macros"]}
+
+serde = { workspace = true }
+shared = { path = "../shared" }
+frontend = { path = "../frontend" }
+dioxus = "0.7.2"
+dioxus-ssr = "0.7.2"
+tower-http = { version = "0.6.8", features = ["fs"] }
+reqwest = { version = "0.13.1", features = ["json"] }
+

@@ -1,0 +1,233 @@
+Ti propongo un progetto concreto, minimale ma realistico, basato esattamente su quanto abbiamo visto:
+Axum + sqlx → backend/API
+Dioxus Web (SSR) → home page
+Slider legacy (jQuery) → mantenutoaxum = "0.8.8"
+tokio = { version = "1", features = ["full"] }
+sqlx = { version = "0.8.6", features = ["postgres", "runtime-tokio"] }
+serde = { version = "1", features = ["derive"] }
+shared = { path = "/shared" }
+dioxus-ssr = "0.7.2"
+Una sola home esposta correttamente
+Niente fronzoli, copi-incolli e funziona.
+📁 Struttura del progetto
+Useremo un workspace Cargo (scelta migliore).
+Copia codice
+
+myapp/
+├─ Cargo.toml
+├─ backend/
+│  ├─ Cargo.toml
+│  └─ src/
+│     ├─ main.rs
+│     ├─ db.rs
+│     └─ api.rs
+├─ frontend/
+│  ├─ Cargo.toml
+│  └─ src/
+│     ├─ lib.rs
+│     ├─ app.rs
+│     └─ home.rs
+├─ shared/
+│  ├─ Cargo.toml
+│  └─ src/lib.rs
+└─ static/
+   ├─ home/
+   │  ├─ slider-init.js
+   │  └─ dist/...
+   └─ img/index/...
+🧩 1️⃣ Crate shared (modelli condivisi)
+shared/src/lib.rs
+Copia codice
+Rust
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Serialize, Deserialize, Clone)]
+pub struct Slider {
+    pub img: String,
+    pub titolo: String,
+    pub caption: String,
+    pub testo: String,
+}
+🧩 2️⃣ Backend Axum
+backend/Cargo.toml
+Copia codice
+Toml
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["full"] }
+sqlx = { version = "0.7", features = ["postgres",backend/src/api.rs "runtime-tokio"] }
+serde = { version = "1", features = ["derive"] }
+shared = { path = "../shared" }
+dioxus-ssr = "0.5"
+frontend = { path = "../frontend" }
+
+backend/src/api.rs
+Copia codice
+Rust
+use axum::{extract::State, Json};
+use sqlx::PgPool;
+use shared::Slider;
+
+pub async fn sliders_api(
+    State(pool): State<PgPool>
+) -> Json<Vec<Slider>> {
+    let sliders = sqlx::query_as!(
+        Slider,
+        "SELECT img, titolo, caption, testo FROM sliders"
+    )
+    .fetch_all(&pool)
+    .await
+    .unwrap();
+
+    Json(sliders)
+}
+backend/src/main.rs
+Copia codice
+Rust
+use axum::{Router, routing::get, response::Html};
+use sqlx::PgPool;
+use std::net::SocketAddr;
+
+use frontend::App;
+use backend::api::sliders_api;
+
+async fn dioxus_app() -> Html<String> {
+    Html(dioxus_ssr::render_to_string(App))
+}
+
+#[tokio::main]
+async fn main() {
+    let pool = PgPool::connect("postgres://user:pass@localhost/db")
+        .await
+        .unwrap();
+
+    let app = Router::new()
+        .route("/api/sliders", get(sliders_api))
+        .route("/*path", get(dioxus_app))
+        .with_state(pool)
+        .nest_service("/static", tower_http::services::ServeDir::new("static"));
+
+    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
+    println!("🚀 http://{}", addr);
+
+    axum::Server::bind(&addr)
+        .serve(app.into_make_service())
+        .await
+        .unwrap();
+}
+🧩 3️⃣ Frontend Dioxus
+frontend/Cargo.toml
+Copia codice
+Toml
+[dependencies]
+dioxus = "0.5"
+dioxus-router = "0.5"
+reqwest = { version = "0.12", features = ["json"] }
+shared = { path = "../shared" }
+frontend/src/lib.rs
+Copia codice
+Rust
+mod app;
+mod home;
+
+pub use app::App;
+frontend/src/app.rs
+Copia codice
+Rust
+use dioxus::prelude::*;
+use crate::home::HomePage;
+
+pub fn App() -> Element {
+    rsx! {
+        HomePage {}
+    }
+}
+frontend/src/home.rs
+Copia codice
+Rust
+use dioxus::prelude::*;
+use shared::Slider;
+
+#[component]
+pub fn HomePage() -> Element {
+    let sliders = use_resource(|| async {
+        reqwest::get("/api/sliders")
+            .await
+            .unwrap()
+            .json::<Vec<Slider>>()
+            .await
+            .unwrap()
+    });
+
+    rsx! {
+        HeadContent {}
+
+        match sliders.read() {
+            Some(Ok(sliders)) => rsx!(
+                SliderPro { sliders }
+            ),
+            Some(Err(_)) => rsx!(p { "Errore" }),
+            None => rsx!(p { "Caricamento..." })
+        }
+    }
+}
+
+#[component]
+fn SliderPro(sliders: Vec<Slider>) -> Element {
+    rsx! {
+        div { id: "example1", class: "slider-pro",
+            div { class: "sp-slides",
+                for s in sliders {
+                    div { class: "sp-slide",
+                        img { src: "/static/img/index/{s.img}" }
+                        h3 { "{s.titolo}" }
+                        p { "{s.caption}" }
+                        p { "{s.testo}" }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#[component]
+fn HeadContent() -> Element {
+    rsx! {
+        head {
+            link { rel: "stylesheet", href: "/static/home/dist/css/slider-pro.min.css" }
+            script { src: "https://code.jquery.com/jquery-3.6.2.min.js" }
+            script { src: "/static/home/dist/js/jquery.sliderPro.min.js" }
+            script { src: "/static/home/slider-init.js" }
+        }
+    }
+}
+🧩 4️⃣ Static JS (identico all’HTML)
+static/home/slider-init.js
+Copia codice
+Js
+document.addEventListener("DOMContentLoaded", function () {
+    $('#example1').sliderPro({
+        width: 960,
+        height: 500,
+        autoplay: true
+    });
+});
+✅ Risultato finale
+/ → Home Dioxus
+/api/sliders → Axum + sqlx
+Slider funzionante
+Nessun template HTML
+Nessun codice buttato
+Pronto per desktop/mobile
+🧠 Perché questo esempio è “giusto”
+✔ Separazione netta
+✔ Condivisione modelli
+✔ Migrazione graduale
+✔ Nessuna magia
+✔ Facilmente estendibile
+Quando torni, il passo naturale sarà:
+layout tipo base.html
+routing Dioxus
+rimozione jQuery
+Ma per ora hai un progetto vero, non un toy example.
+Buon lavoro 👋

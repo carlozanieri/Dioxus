@@ -1,0 +1,11 @@
+/home/carlo/Dioxus/casabaldini/target/debug/deps/generational_box-a77d42ba77b6d89f.d: /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/lib.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/entry.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/error.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/references.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/sync.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/unsync.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/../README.md
+
+/home/carlo/Dioxus/casabaldini/target/debug/deps/libgenerational_box-a77d42ba77b6d89f.rmeta: /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/lib.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/entry.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/error.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/references.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/sync.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/unsync.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/../README.md
+
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/lib.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/entry.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/error.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/references.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/sync.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/unsync.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/generational-box-0.7.2/src/../README.md:

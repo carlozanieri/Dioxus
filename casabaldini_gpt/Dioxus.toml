@@ -1,0 +1,34 @@
+[application]
+
+[web.app]
+
+# HTML title tag content
+title = "casabaldini"
+
+# include `assets` in web platform
+[web.resource]
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
+
+[dependencies]
+axum = "0.8.8"
+tokio = { workspace = true }
+
+sqlx = {version = "0.8.6", features = ["sqlite","runtime-tokio","macros"]}
+
+serde = { workspace = true }
+shared = { path = "../shared" }
+frontend = { path = "../frontend" }
+dioxus = "0.7.2"
+dioxus-ssr = "0.7.2"
+tower-http = { version = "0.6.8", features = ["fs"] }

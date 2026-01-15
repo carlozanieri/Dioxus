@@ -1,0 +1,12 @@
+/home/carlo/Dioxus/casabaldini/target/debug/deps/enumset-fb9a061e6edfa054.d: /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/lib.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/macros.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/derive.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/mod.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/array.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/primitive.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/set.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/traits.rs
+
+/home/carlo/Dioxus/casabaldini/target/debug/deps/libenumset-fb9a061e6edfa054.rmeta: /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/lib.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/macros.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/derive.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/mod.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/array.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/primitive.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/set.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/traits.rs
+
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/lib.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/macros.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/derive.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/mod.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/array.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/repr/primitive.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/set.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/enumset-1.1.10/src/traits.rs:
