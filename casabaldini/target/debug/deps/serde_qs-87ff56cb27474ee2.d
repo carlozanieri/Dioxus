@@ -1,0 +1,12 @@
+/home/carlo/AreaComune/RUST/Dioxus/casabaldini/target/debug/deps/serde_qs-87ff56cb27474ee2.d: /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/lib.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/mod.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/parse.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/error.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/ser.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/utils.rs
+
+/home/carlo/AreaComune/RUST/Dioxus/casabaldini/target/debug/deps/libserde_qs-87ff56cb27474ee2.rlib: /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/lib.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/mod.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/parse.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/error.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/ser.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/utils.rs
+
+/home/carlo/AreaComune/RUST/Dioxus/casabaldini/target/debug/deps/libserde_qs-87ff56cb27474ee2.rmeta: /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/lib.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/mod.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/parse.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/error.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/ser.rs /home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/utils.rs
+
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/lib.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/mod.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/de/parse.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/error.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/ser.rs:
+/home/carlo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_qs-0.15.0/src/utils.rs:
